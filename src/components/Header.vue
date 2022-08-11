@@ -7,18 +7,26 @@
       程序员，泉州人在福州，使用 Java、Python、Go 和 JavaScript 开发。
     </div>
     <div class="navication">
-      <router-link :to="{name: 'home'}" class="navication-item" :class="activeNav === 'Home'? 'nav-item-active': ''">首页</router-link>
-      <router-link :to="{name: 'tag'}" class="navication-item" :class="activeNav === 'Tag'? 'nav-item-active': ''">标签</router-link>
-      <router-link :to="{name: 'search'}" class="navication-item" :class="activeNav === 'Search'? 'nav-item-active': ''">搜索</router-link>
-      <router-link :to="{name: 'about'}" class="navication-item" :class="activeNav === 'About'? 'nav-item-active': ''">关于</router-link>
+      <router-link :to="{name: 'home'}" class="navication-item">首页</router-link>
+      <router-link :to="{name: 'tag'}" class="navication-item">标签</router-link>
+      <router-link :to="{name: 'search'}" class="navication-item">搜索</router-link>
+      <router-link :to="{name: 'about'}" class="navication-item">关于</router-link>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Header"
-}
+<script setup>
+import {getCurrentInstance, onMounted, ref, watch} from "vue";
+import router from "../router/index.js";
+
+const { proxy } = getCurrentInstance();
+
+const activeNav = ref('');
+
+// watch(() => router.currentRoute.value.path,(newValue, oldValue) => {
+//   activeNav.value = newValue.name;
+// },{ immediate: true })
+
 </script>
 
 <style lang="scss">
@@ -48,6 +56,10 @@ export default {
 
     .navication-item {
       margin-left: 30px;
+    }
+
+    .router-link-exact-active {
+      color: #0d6efd;
     }
   }
 }
