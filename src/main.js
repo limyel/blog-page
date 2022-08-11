@@ -1,21 +1,14 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { createPinia } from "pinia";
 import router from "./router";
-import VMdPreview from '@kangc/v-md-editor/lib/preview';
-import '@kangc/v-md-editor/lib/style/preview.css';
-import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
-import '@kangc/v-md-editor/lib/theme/style/github.css';
-import hljs from 'highlight.js';
+import store from "./store";
+import request from "./utils/request";
+import api from "./api";
 
-const app = createApp(App);
+const app = createApp(App)
 
-const pinia = createPinia();
-VMdPreview.use(githubTheme, {
-    Hljs: hljs,
-});
-
-app.use(pinia);
 app.use(router);
-app.use(VMdPreview);
+app.use(store);
+app.config.globalProperties.$request = request;
+app.config.globalProperties.$api = api;
 app.mount('#app');
