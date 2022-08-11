@@ -16,12 +16,6 @@
 </template>
 
 <script setup>
-import {getCurrentInstance, onMounted, ref, watch} from "vue";
-import router from "../router/index.js";
-
-const { proxy } = getCurrentInstance();
-
-const activeNav = ref('');
 
 // watch(() => router.currentRoute.value.path,(newValue, oldValue) => {
 //   activeNav.value = newValue.name;
