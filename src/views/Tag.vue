@@ -2,17 +2,14 @@
   <div class="tag">
     <div class="tag-item" v-for="(tag, index) in tagList" :key="index">
       <div class="tag—link">
-        <router-link :to="{'name': 'tag_detail', params: {'slug': tag.slug}}">{{tag.name}}</router-link>
-      </div>
-      <div class="tag-post-num">
-        {{tag.postNum}}
+        <router-link :to="{'name': 'tag_detail', params: {'slug': tag.slug}}">{{tag.name}} - {{tag.postNum}}</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import {getCurrentInstance, onMounted} from "vue";
+import {getCurrentInstance, onMounted, ref} from "vue";
 
 const { proxy } = getCurrentInstance();
 
@@ -29,13 +26,14 @@ onMounted(() => {
 
 <style lang="scss">
 .tag {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+
   .tag-item {
-    display: flex;
-    flex-direction: row;
-    /*border-bottom: 1px solid #E1E1E1;*/
-    margin: 35px 0;
-    justify-content: space-between;
     line-height: 1.6rem;
+    margin: 10px 10px;
 
     .tag—link {
       padding: 0.4rem;
@@ -43,10 +41,6 @@ onMounted(() => {
       line-height: 100%;
       border: 2px solid #000000;
       border-radius: 5px;
-    }
-
-    .tag-post-num {
-      margin-left: 100px;
     }
   }
 }

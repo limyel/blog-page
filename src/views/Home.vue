@@ -27,12 +27,6 @@ const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
 
-onMounted(() => {
-  // proxy.$api.getPostInHome(proxy.$route.query).then(response => {
-  //   postList.value = response.records;
-  // })
-})
-
 const update = data => {
   postList.value = data;
 }
@@ -47,12 +41,12 @@ const update = data => {
 
   .archive-item {
     border-bottom: #6c757d dashed 1px;
+    padding: 5px 0;
     display: flex;
     flex-direction: row;
     line-height: 1.6rem;
     width: 100%;
     margin: 10px 0;
-    padding: 5px 0;
 
     .archive-item-date {
       width: 120px;

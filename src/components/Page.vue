@@ -16,7 +16,7 @@ const props = defineProps({
   }
 })
 
-let currentPage = ref(1);
+let currentPage = ref(0);
 let maxPage = ref(1);
 
 const emit = defineEmits(['handleUpdate'])
