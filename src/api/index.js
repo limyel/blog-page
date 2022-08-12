@@ -13,5 +13,11 @@ export default {
       url: 'http://localhost:8002/post/' + slug,
       method: "get"
     })
+  },
+  getTagAll() {
+    return request({
+      url: "http://localhost:8002/tag",
+      method: "get"
+    })
   }
 }

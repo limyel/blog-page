@@ -8,36 +8,23 @@
         {{tag.postNum}}
       </div>
     </div>
-
-    <Page v-if="false"/>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Tag",
-  data() {
-    return {
-      tagList: [
-        {
-          name: "Python",
-          slug: "python",
-          postNum: 10
-        },
-        {
-          name: "Java",
-          slug: "java",
-          postNum: 112
-        },
-        {
-          name: "Go",
-          slug: "go",
-          postNum: 11
-        }
-      ]
-    }
-  }
-}
+<script setup>
+import {getCurrentInstance, onMounted} from "vue";
+
+const { proxy } = getCurrentInstance();
+
+let tagList = ref([]);
+
+onMounted(() => {
+  proxy.$api.getTagAll().then(response => {
+    tagList.value = response;
+  })
+})
+
+
 </script>
 
 <style lang="scss">
