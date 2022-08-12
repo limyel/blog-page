@@ -23,12 +23,24 @@ export default {
 
 <style lang="scss">
 
+@media (min-width: 0px) and (max-width: 1400px) {
+  .theme {
+    width: 54%;
+    margin-left: 23%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .theme {
+    width: 44%;
+    margin-left: 28%;
+  }
+}
+
 
 .theme {
   display: flex;
   flex-direction: column;
-  width: 44%;
-  margin-left: 28%;
   min-height: 100vh;
 
   .main {
