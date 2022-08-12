@@ -7,5 +7,11 @@ export default {
       data: params,
       method: "get"
     })
+  },
+  getPostDetail(slug) {
+    return request({
+      url: 'http://localhost:8002/post/' + slug,
+      method: "get"
+    })
   }
 }
