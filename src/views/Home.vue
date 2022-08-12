@@ -14,24 +14,28 @@
       </div>
     </div>
 
-    <Page/>
+    <Page :api="proxy.$api.getPostInHome" @handleUpdate="update"/>
   </div>
 </template>
 
 <script setup>
 import {showTimeShort} from "../utils/DateTimeFormat.js";
 import {getCurrentInstance, onMounted, reactive, ref} from "vue";
+import Page from "../components/Page.vue";
 
 const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
 
 onMounted(() => {
-  proxy.$api.getPostInHome().then(response => {
-    postList.value.push(...response.records);
-    console.log(postList)
-  })
+  // proxy.$api.getPostInHome(proxy.$route.query).then(response => {
+  //   postList.value = response.records;
+  // })
 })
+
+const update = data => {
+  postList.value = data;
+}
 
 </script>
 
