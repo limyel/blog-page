@@ -109,13 +109,24 @@ export default {
     flex-grow: 1;
 
     .search-result-item {
-      margin: 35px 0;
+      margin: 30px 0;
+      border-bottom: #6c757d dashed 1px;
+      padding: 5px 0;
+
+      .search-result-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .search-result-content {
+        width: 100%;
+        word-wrap:break-word;
+        word-break:break-all;
+        overflow: hidden;
+      }
     }
 
-    .search-result-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
   }
 }
 </style>

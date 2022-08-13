@@ -27,6 +27,7 @@ export default {
   .theme {
     width: 54%;
     margin-left: 23%;
+    margin-right: 23%;
   }
 }
 
@@ -34,6 +35,7 @@ export default {
   .theme {
     width: 44%;
     margin-left: 28%;
+    margin-right: 28%;
   }
 }
 
