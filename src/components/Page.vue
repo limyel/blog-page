@@ -8,11 +8,12 @@
 
 <script setup>
 import {onMounted, ref} from "vue";
+import request from "../utils/request.js";
 
 const props = defineProps({
   api: {
-    type: Function,
-    default: null
+    type: String,
+    default: ""
   }
 })
 
@@ -37,7 +38,11 @@ const hasPre = () => {
 
 const updatePre = () => {
   const params = {pageNum: prePage()}
-  props.api(params).then(response => {
+  request({
+    url: props.api,
+    data: params,
+    method: "get"
+  }).then(response => {
     currentPage.value = response.current;
     maxPage.value = response.pages;
     emit('handleUpdate', response.records);
@@ -45,7 +50,11 @@ const updatePre = () => {
 }
 const updateNext = () => {
   const params = {pageNum: nextPage()}
-  props.api(params).then(response => {
+  request({
+    url: props.api,
+    data: params,
+    method: "get"
+  }).then(response => {
     currentPage.value = response.current;
     maxPage.value = response.pages;
     emit('handleUpdate', response.records);

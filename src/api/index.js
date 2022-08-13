@@ -19,5 +19,17 @@ export default {
       url: "http://localhost:8002/tag",
       method: "get"
     })
+  },
+  getAbout() {
+    return request({
+      url: "http://localhost:8002/about",
+      method: "get"
+    })
+  },
+  listPostByTag(slug) {
+    return request({
+      url: "http://localhost:8002/post/by-tag/" + slug,
+      method: "get"
+    })
   }
 }

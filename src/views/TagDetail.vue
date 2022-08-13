@@ -4,135 +4,39 @@
       {{$route.params['slug']}}
     </div>
 
-    <div class="archive-block" v-for="(year, index) in Object.keys(posts)" :key="index">
-      <div class="archive-year">
-        {{year}}
+    <div class="post-item" v-for="(post, index) in postList" :key="index">
+      <div class="post-item-date">
+        {{showTimeShort(post.createTime)}}
       </div>
-      <div class="archive-item" v-for="(post, index) in posts[year]" :key="index">
-        <div class="archive-item-date">
-          {{showMonthDayLocal(post.createTime)}}
-        </div>
-        <div class="archive-item-title">
-          <router-link :to="{name: 'post', params: {'slug': post.slug}}">{{post.title}}</router-link>
+      <div class="post-item-title">
+        <router-link :to="{name: 'post', params: {slug: post.slug}}">{{post.title}}</router-link>
+      </div>
+      <div class="post-item-tags" v-for="(tag, index) in post.tagList" :key="index">
+        <div class="post-item-tag">
+          <router-link :to="{name: 'tag_detail', params: {slug: tag.slug}}">{{tag.name}}</router-link>
         </div>
       </div>
     </div>
 
-    <Page v-if="false"/>
+    <Page :api="api" @handleUpdate="update"/>
   </div>
 </template>
 
-<script>
-import {showMonthDayLocal} from "../utils/DateTimeFormat";
+<script setup>
+import {showTimeShort} from "../utils/DateTimeFormat";
+import {getCurrentInstance, ref} from "vue";
+import Page from "../components/Page.vue";
 
-export default {
-  name: "TagDetail",
-  data() {
-    return {
-      posts: {
-        2022: [
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          },
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          },
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          }
-        ],
-        2021: [
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          },
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          }
-        ],
-        2020: [
-          {
-            createTime: 1658108426000,
-            title: "hello world",
-            slug: "hello-world",
-            tagList: [
-              {
-                name: "Java",
-                slug: "java"
-              },
-              {
-                name: "Python",
-                slug: "python"
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  methods: {
-    showMonthDayLocal
-  }
+const { proxy } = getCurrentInstance();
+
+let postList = ref([]);
+
+const api = ref("http://localhost:8002/post/by-tag/" + proxy.$route.params['slug'])
+
+const update = data => {
+  postList.value = data;
 }
+
 </script>
 
 <style lang="scss">
@@ -142,26 +46,36 @@ export default {
     margin-top: 35px;
   }
 
-  .archive-block {
-    .archive-year {
-      font-size: 1.5rem;
-      margin: 35px 0;
+  .post-item {
+    border-bottom: #6c757d dashed 1px;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.6rem;
+    width: 100%;
+    margin: 10px 0;
+
+    .post-item-date {
+      width: 120px;
+      color: #6c757d;
     }
 
-    .archive-item {
+    .post-item-title {
+      flex-grow: 1;
+      font-weight: bold;
+    }
+
+    .post-item-tags {
       display: flex;
       flex-direction: row;
-      line-height: 1.6rem;
-      width: 100%;
-      margin: 10px 0;
 
-      .archive-item-date {
-        /*margin-right: 50px;*/
-        width: 100px;
-      }
-
-      .archive-item-title {
-        flex-grow: 1;
+      .post-item-tag {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+        line-height: 100%;
+        margin-left: 10px;
+        border: 2px solid #000000;
+        border-radius: 5px;
       }
     }
   }

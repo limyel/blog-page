@@ -1,20 +1,20 @@
 <template>
   <div class="home">
-    <div class="archive-item" v-for="(post, index) in postList" :key="index">
-      <div class="archive-item-date">
+    <div class="post-item" v-for="(post, index) in postList" :key="index">
+      <div class="post-item-date">
         {{showTimeShort(post.createTime)}}
       </div>
-      <div class="archive-item-title">
+      <div class="post-item-title">
         <router-link :to="{name: 'post', params: {slug: post.slug}}">{{post.title}}</router-link>
       </div>
-      <div class="archive-item-tags" v-for="(tag, index) in post.tagList" :key="index">
-        <div class="archive-item-tag">
+      <div class="post-item-tags" v-for="(tag, index) in post.tagList" :key="index">
+        <div class="post-item-tag">
           <router-link :to="{name: 'tag_detail', params: {slug: tag.slug}}">{{tag.name}}</router-link>
         </div>
       </div>
     </div>
 
-    <Page :api="proxy.$api.getPostInHome" @handleUpdate="update"/>
+    <Page :api="api" @handleUpdate="update"/>
   </div>
 </template>
 
@@ -26,6 +26,8 @@ import Page from "../components/Page.vue";
 const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
+
+const api = ref("http://localhost:8002/post");
 
 const update = data => {
   postList.value = data;
@@ -39,7 +41,7 @@ const update = data => {
   flex-direction: column;
   padding-top: 20px;
 
-  .archive-item {
+  .post-item {
     border-bottom: #6c757d dashed 1px;
     padding: 5px 0;
     display: flex;
@@ -48,21 +50,21 @@ const update = data => {
     width: 100%;
     margin: 10px 0;
 
-    .archive-item-date {
+    .post-item-date {
       width: 120px;
       color: #6c757d;
     }
 
-    .archive-item-title {
+    .post-item-title {
       flex-grow: 1;
       font-weight: bold;
     }
 
-    .archive-item-tags {
+    .post-item-tags {
       display: flex;
       flex-direction: row;
 
-      .archive-item-tag {
+      .post-item-tag {
         padding: 0.4rem;
         font-size: 0.8rem;
         line-height: 100%;
