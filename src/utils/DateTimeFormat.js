@@ -20,6 +20,15 @@ export function showTimeShort(timeStamp) {
         return parseInt(delta / 60 / 24 / 365) + ' 年前'
 }
 
+export function showDayDelta(timestamp) {
+    let date = new Date(timestamp);
+    let ts = date.getTime();
+    ts /= 1000;
+    let now = new Date() / 1000;
+    let delta = parseInt((now - ts) / 60);
+    return parseInt(delta / 60 / 24) + ' 天前';
+}
+
 export function showTimeDetail(timeStamp) {
     let ts = new Date(timeStamp);
     return ts.getFullYear() + "-" + (ts.getMonth()+1) + "-" + ts.getDate() + " " + ts.getHours() + ": " + ts.getMinutes();
