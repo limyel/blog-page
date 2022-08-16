@@ -6,7 +6,7 @@
 
     <div class="post-item" v-for="(post, index) in postList" :key="index">
       <div class="post-item-date">
-        {{showTimeShort(post.createTime)}}
+        {{showDayDelta(post.createTime)}}
       </div>
       <div class="post-item-title">
         <router-link :to="{name: 'post', params: {slug: post.slug}}">{{post.title}}</router-link>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import {showTimeShort} from "../utils/DateTimeFormat";
+import {showDayDelta} from "../utils/DateTimeFormat";
 import {getCurrentInstance, ref} from "vue";
 import Page from "../components/Page.vue";
 
