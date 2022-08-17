@@ -26,7 +26,14 @@ export function showDayDelta(timestamp) {
     ts /= 1000;
     let now = new Date() / 1000;
     let delta = parseInt((now - ts) / 60);
-    return parseInt(delta / 60 / 24) + ' 天前';
+    if (delta >= 0 && delta < 10)
+        return '刚刚';
+    else if (delta >= 10 && delta < 60)
+        return delta + ' 分钟前';
+    else if (delta >= 60 && delta < 60 * 24)
+        return parseInt(delta / 60) + ' 小时前';
+    else if (delta >= 60 * 24)
+        return parseInt(delta / 60 / 24) + ' 天前';
 }
 
 export function showTimeDetail(timeStamp) {

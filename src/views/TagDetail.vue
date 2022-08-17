@@ -31,7 +31,7 @@ const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
 
-const api = ref("http://localhost:8002/post/by-tag/" + proxy.$route.params['slug'])
+const api = ref("http://localhost:8003/post/by-tag/" + proxy.$route.params['slug'])
 
 const update = data => {
   postList.value = data;
@@ -44,16 +44,16 @@ const update = data => {
   .tag-title {
     font-size: 2rem;
     margin-top: 35px;
+    margin-bottom: 20px;
   }
 
   .post-item {
-    border-bottom: #6c757d dashed 1px;
-    padding: 5px 0;
+    border-bottom: #eef0f3 solid 1px;
+    padding: 15px 10px;
     display: flex;
     flex-direction: row;
     line-height: 1.6rem;
     width: 100%;
-    margin: 10px 0;
 
     .post-item-date {
       width: 120px;
@@ -78,6 +78,9 @@ const update = data => {
         border-radius: 5px;
       }
     }
+  }
+  .post-item:hover {
+    background-color: #eef0f3;
   }
 }
 
