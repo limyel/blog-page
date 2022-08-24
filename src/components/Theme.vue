@@ -23,19 +23,19 @@ export default {
 
 <style lang="scss">
 
-@media (min-width: 0px) and (max-width: 1400px) {
+@media (min-width: 0px) and (max-width: 1600px) {
   .theme {
-    width: 54%;
-    margin-left: 23%;
-    margin-right: 23%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
   .theme {
-    width: 44%;
-    margin-left: 28%;
-    margin-right: 28%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 
