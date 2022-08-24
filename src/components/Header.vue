@@ -25,7 +25,6 @@
 .header {
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid #000000;
   padding: 20px 0;
   justify-content: space-between;
   margin-bottom: 30px;
