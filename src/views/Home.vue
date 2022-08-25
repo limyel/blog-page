@@ -63,6 +63,7 @@ const update = data => {
       display: flex;
       flex-direction: row;
       margin-bottom: 20px;
+      line-height: 0.8rem;
 
       .create-time {
         color: #787878;
