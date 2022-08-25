@@ -81,10 +81,6 @@ const update = data => {
       }
     }
 
-    .description {
-      margin-bottom: 20px;
-    }
-
   }
 }
 </style>
