@@ -29,7 +29,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
+  //margin-top: 20px;
 
   .tag-item {
     line-height: 1.6rem;

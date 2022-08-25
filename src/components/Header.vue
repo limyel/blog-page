@@ -30,7 +30,7 @@
   margin-bottom: 30px;
 
   .logo {
-    font-weight: bolder;
+    font-weight: 700;
     letter-spacing: 3px;
   }
 
@@ -41,7 +41,7 @@
     justify-content: right;
 
     .navication-item {
-      font-weight: bolder;
+      font-weight: 700;
       font-size: 1.1rem;
       margin-left: 30px;
     }

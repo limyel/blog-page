@@ -62,7 +62,7 @@ const update = data => {
 
     .post-item-title {
       flex-grow: 1;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .post-item-tags {

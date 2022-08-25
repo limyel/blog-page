@@ -116,7 +116,7 @@ export default {
       .search-result-title {
         font-size: 1.2rem;
         margin-bottom: 10px;
-        font-weight: bold;
+        font-weight: 700;
       }
 
       .search-result-content {

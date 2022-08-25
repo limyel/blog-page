@@ -10,8 +10,20 @@
 
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-L.ttf');
-  font-weight: normal;
+  src: url('./assets/font/OPPOSans-R.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "oppos-sons";
+  src: url('./assets/font/OPPOSans-B.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "oppos-sons";
+  src: url('./assets/font/OPPOSans-H.ttf');
+  font-weight: 900;
   font-style: normal;
 }
 

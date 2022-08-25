@@ -56,7 +56,7 @@ const update = data => {
 
     .title {
       font-size: 1.5rem;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 20px;
     }
 
@@ -65,13 +65,9 @@ const update = data => {
       flex-direction: row;
       margin-bottom: 20px;
 
-      * {
-        font-size: 0.8rem;
-      }
-
       .create-time {
-        font-weight: lighter;
         color: #787878;
+        font-size: 0.8rem;
       }
 
       .tags {
@@ -79,9 +75,8 @@ const update = data => {
         flex-direction: row;
 
         .tag {
-          .tag-name {
-            font-weight: bolder;
-          }
+          font-size: 0.8rem;
+          font-weight: 700;
         }
       }
     }
