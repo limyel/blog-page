@@ -1,8 +1,8 @@
 <template>
-  <div class="page">
+  <div class="page" v-if="maxPage !== 0">
     <button v-if="hasPre()" @click="updatePre">上一页</button>
-    <button v-if="hasNext()" @click="updateNext">下一页</button>
     {{currentPage}}/{{maxPage}}
+    <button v-if="hasNext()" @click="updateNext">下一页</button>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ const props = defineProps({
 })
 
 let currentPage = ref(0);
-let maxPage = ref(1);
+let maxPage = ref(0);
 
 const emit = defineEmits(['handleUpdate'])
 
