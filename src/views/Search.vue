@@ -88,7 +88,7 @@ export default {
   .search-input {
     display: flex;
     height: 40px;
-    margin: 35px 0;
+    margin-bottom: 20px;
 
     * {
       font-size: 20px
@@ -109,17 +109,18 @@ export default {
     flex-grow: 1;
 
     .search-result-item {
-      margin: 30px 0;
-      border-bottom: #6c757d dashed 1px;
+      margin-bottom: 20px;
+      border-bottom: #2d374b dashed 1px;
       padding: 5px 0;
 
       .search-result-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
         font-weight: 700;
       }
 
       .search-result-content {
+        margin-bottom: 20px;
         width: 100%;
         word-wrap:break-word;
         word-break:break-all;
