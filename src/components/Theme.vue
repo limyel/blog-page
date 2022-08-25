@@ -33,9 +33,9 @@ export default {
 
 @media screen and (min-width: 1600px) {
   .theme {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
   }
 }
 

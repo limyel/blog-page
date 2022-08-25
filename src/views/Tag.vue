@@ -29,18 +29,18 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  //margin-top: 20px;
 
   .tag-item {
-    line-height: 1.6rem;
-    margin: 10px 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 
     .tag—link {
-      padding: 0.4rem;
-      font-size: 0.8rem;
+      padding: 8px;
       line-height: 100%;
-      border: 2px solid #000000;
+      border: 2px solid #6c757d;
       border-radius: 5px;
+      font-size: 0.9rem;
     }
   }
 }

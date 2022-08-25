@@ -44,7 +44,6 @@ const update = data => {
 .home {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
 
   .post-item {
     border-bottom: #2d374b dashed 1px;

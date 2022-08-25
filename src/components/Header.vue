@@ -27,7 +27,7 @@
   flex-direction: row;
   padding: 20px 0;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   .logo {
     font-weight: 700;
