@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      limyel
+      limyel's blog
     </div>
     <div class="navication">
       <router-link :to="{name: 'home'}" class="navication-item">文章</router-link>
