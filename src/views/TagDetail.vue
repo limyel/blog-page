@@ -5,16 +5,21 @@
     </div>
 
     <div class="post-item" v-for="(post, index) in postList" :key="index">
-      <div class="post-item-date">
-        {{showDayDelta(post.createTime)}}
-      </div>
-      <div class="post-item-title">
+      <div class="title">
         <router-link :to="{name: 'post', params: {slug: post.slug}}">{{post.title}}</router-link>
       </div>
-      <div class="post-item-tags" v-for="(tag, index) in post.tagList" :key="index">
-        <div class="post-item-tag">
-          <router-link :to="{name: 'tag_detail', params: {slug: tag.slug}}">{{tag.name}}</router-link>
+      <div class="info">
+        <div class="create-time">
+          {{showTimeDetail(post.createTime)}} ·&nbsp;
         </div>
+        <div class="tags">
+          <div class="tag" v-for="(tag, index) in post.tagList" :key="index">
+            <router-link class="tag-name" :to="{name: 'tag_detail', params: {slug: tag.slug}}">{{tag.name}}</router-link>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        <v-md-preview :text="post.description" class="content"></v-md-preview>
       </div>
     </div>
 
@@ -23,7 +28,7 @@
 </template>
 
 <script setup>
-import {showDayDelta} from "../utils/DateTimeFormat";
+import {showTimeDetail} from "../utils/DateTimeFormat";
 import {getCurrentInstance, ref} from "vue";
 import Page from "../components/Page.vue";
 
@@ -43,44 +48,45 @@ const update = data => {
 .tag-detail {
   .tag-title {
     font-size: 2rem;
-    margin-top: 35px;
-    margin-bottom: 20px;
+    line-height: 2rem;
+    margin-bottom: 50px;
   }
 
   .post-item {
-    border-bottom: #eef0f3 solid 1px;
-    padding: 15px 10px;
+    border-bottom: #2d374b dashed 1px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     line-height: 1.6rem;
     width: 100%;
+    margin-bottom: 20px;
 
-    .post-item-date {
-      width: 120px;
-      color: #6c757d;
-    }
-
-    .post-item-title {
-      flex-grow: 1;
+    .title {
+      font-size: 1.5rem;
       font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    .post-item-tags {
+    .info {
       display: flex;
       flex-direction: row;
+      margin-bottom: 20px;
+      line-height: 0.8rem;
 
-      .post-item-tag {
-        padding: 0.4rem;
+      .create-time {
+        color: #787878;
         font-size: 0.8rem;
-        line-height: 100%;
-        margin-left: 10px;
-        border: 2px solid #000000;
-        border-radius: 5px;
+      }
+
+      .tags {
+        display: flex;
+        flex-direction: row;
+
+        .tag {
+          font-size: 0.8rem;
+          font-weight: 700;
+        }
       }
     }
-  }
-  .post-item:hover {
-    background-color: #eef0f3;
   }
 }
 

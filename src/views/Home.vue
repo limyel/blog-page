@@ -80,7 +80,6 @@ const update = data => {
         }
       }
     }
-
   }
 }
 </style>
