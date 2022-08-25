@@ -66,7 +66,7 @@ const update = data => {
       line-height: 0.8rem;
 
       .create-time {
-        color: #787878;
+        font-weight: 200;
         font-size: 0.8rem;
       }
 

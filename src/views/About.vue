@@ -20,7 +20,4 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.about {
-  margin-top: 30px;
-}
 </style>
