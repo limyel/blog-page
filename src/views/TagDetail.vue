@@ -1,7 +1,7 @@
 <template>
   <div class="tag-detail">
     <div class="tag-title">
-      {{$route.params['slug']}}
+      {{tag.name}}
     </div>
 
     <div class="post-item" v-for="(post, index) in postList" :key="index">
@@ -29,18 +29,26 @@
 
 <script setup>
 import {showTimeDetail} from "../utils/DateTimeFormat";
-import {getCurrentInstance, ref} from "vue";
+import {getCurrentInstance, onMounted, ref} from "vue";
 import Page from "../components/Page.vue";
 
 const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
+let tag = ref({});
 
 const api = ref("http://localhost:8003/post/by-tag/" + proxy.$route.params['slug'])
 
 const update = data => {
   postList.value = data;
 }
+
+onMounted(() => {
+  const tagSlug = proxy.$route.params['slug'];
+  proxy.$api.getTagInfo(tagSlug).then(response => {
+    tag.value = response;
+  })
+})
 
 </script>
 

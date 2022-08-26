@@ -20,6 +20,12 @@ export default {
       method: "get"
     })
   },
+  getTagInfo(tagSlug) {
+    return request({
+      url: "http://localhost:8003/tag/" + tagSlug,
+      method: "get"
+    })
+  },
   getAbout() {
     return request({
       url: "http://localhost:8003/about",

@@ -2,7 +2,7 @@
   <div class="tag">
     <div class="tag-item" v-for="(tag, index) in tagList" :key="index">
       <div class="tag—link">
-        <router-link :to="{'name': 'tag_detail', params: {'slug': tag.slug}}">{{tag.name}} - {{tag.postNum}}</router-link>
+        <router-link :to="{'name': 'tag_detail', params: {'slug': tag.slug}}" @click="">{{tag.name}} - {{tag.postNum}}</router-link>
       </div>
     </div>
   </div>
