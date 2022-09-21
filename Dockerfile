@@ -1,9 +1,9 @@
 # 构建容器
-FROM node:12.6.0-alpine as build
+FROM node:18.7.0-alpine as build
 WORKDIR /app
 
 COPY package.json .
-RUN npm install
+RUN npm config set registry https://registry.npm.taobao.org && npm install
 COPY . /app
 RUN npm run build
 
