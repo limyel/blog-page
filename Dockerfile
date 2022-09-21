@@ -1,5 +1,5 @@
 # 构建容器
-FROM node:18.7.0-alpine as build
+FROM node:18.6.0-alpine as build
 WORKDIR /app
 
 COPY package.json .
