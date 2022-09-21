@@ -27,12 +27,13 @@
 import {showTimeDetail} from "../utils/DateTimeFormat.js";
 import {getCurrentInstance, onMounted, reactive, ref} from "vue";
 import Page from "../components/Page.vue";
+import config from "@/config";
 
 const { proxy } = getCurrentInstance();
 
 let postList = ref([]);
 
-const api = ref("http://localhost:8003/post");
+const api = ref(config.baseUrl + "/post");
 
 const update = data => {
   postList.value = data;

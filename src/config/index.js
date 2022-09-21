@@ -17,8 +17,7 @@ const EnvConfig = {
         mockUrl: ''
     }
 }
+console.log(process.env.NODE_ENV === "production")
 export default {
-    env,
-    mock: true,
-    ...EnvConfig[env]
+    baseUrl: process.env.NODE_ENV === "production"? "https://api.limyel.com": "localhost:8003"
 }

@@ -1,40 +1,50 @@
 import request from "../utils/request";
+import config from "@/config";
+
+let baseUrl = config.baseUrl;
+console.log(baseUrl)
 
 export default {
   getPostInHome(params) {
+    let apiUrl = baseUrl + "/post";
     return request({
-      url: "http://localhost:8003/post",
+      url: apiUrl,
       data: params,
       method: "get"
     })
   },
   getPostDetail(slug) {
+    let apiUrl = baseUrl + "/post/" + slug;
     return request({
-      url: 'http://localhost:8003/post/' + slug,
+      url: apiUrl,
       method: "get"
     })
   },
   getTagAll() {
+    let apiUrl = baseUrl + "/tag";
     return request({
-      url: "http://localhost:8003/tag",
+      url: apiUrl,
       method: "get"
     })
   },
   getTagInfo(tagSlug) {
+    let apiUrl = baseUrl + "/tag/" + tagSlug;
     return request({
-      url: "http://localhost:8003/tag/" + tagSlug,
+      url: apiUrl,
       method: "get"
     })
   },
   getAbout() {
+    let apiUrl = baseUrl + "/about";
     return request({
-      url: "http://localhost:8003/about",
+      url: apiUrl,
       method: "get"
     })
   },
   listPostByTag(slug) {
+    let apiUrl = baseUrl + "/post/by-tag/" + slug;
     return request({
-      url: "http://localhost:8003/post/by-tag/" + slug,
+      url: apiUrl,
       method: "get"
     })
   }

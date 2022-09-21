@@ -10,12 +10,7 @@
       </div>
       <div class="info">
         <div class="create-time">
-          {{showTimeDetail(post.createTime)}} ·&nbsp;
-        </div>
-        <div class="tags">
-          <div class="tag" v-for="(tag, index) in post.tagList" :key="index">
-            <router-link class="tag-name" :to="{name: 'tag_detail', params: {slug: tag.slug}}">{{tag.name}}</router-link>&nbsp;&nbsp;
-          </div>
+          {{showTimeDetail(post.createTime)}}
         </div>
       </div>
       <div class="description">
@@ -83,16 +78,6 @@ onMounted(() => {
       .create-time {
         color: #787878;
         font-size: 0.8rem;
-      }
-
-      .tags {
-        display: flex;
-        flex-direction: row;
-
-        .tag {
-          font-size: 0.8rem;
-          font-weight: 700;
-        }
       }
     }
   }
