@@ -19,5 +19,5 @@ const EnvConfig = {
 }
 console.log(process.env.NODE_ENV === "production")
 export default {
-    baseUrl: process.env.NODE_ENV === "production"? "https://api.limyel.com": "localhost:8003"
+    baseUrl: process.env.NODE_ENV === "production"? "https://api.limyel.com": "http://localhost:8003"
 }

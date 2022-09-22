@@ -46,4 +46,7 @@ body * {
 .github-markdown-body {
   padding: 0 !important;
 }
+.github-markdown-body p {
+  line-height: 25px;
+}
 </style>
