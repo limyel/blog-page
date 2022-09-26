@@ -10,25 +10,25 @@
 
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-L.ttf');
+  src: url(https://qiniu.limyel.com/font/OPPOSans-L.ttf);
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-R.ttf');
+  src: url(https://qiniu.limyel.com/font/OPPOSans-R.ttf);
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-B.ttf');
+  src: url(https://qiniu.limyel.com/font/OPPOSans-B.ttf);
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "oppos-sons";
-  src: url('./assets/font/OPPOSans-H.ttf');
+  src: url(https://qiniu.limyel.com/font/OPPOSans-H.ttf);
   font-weight: 900;
   font-style: normal;
 }
