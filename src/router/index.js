@@ -41,6 +41,11 @@ const routes = [
                 name: 'now',
                 path: '/now',
                 component: () => import('../views/Now.vue')
+            },
+            {
+                name: 'now_history',
+                path: '/now/history',
+                component: () => import('../views/NowHistory.vue')
             }
         ]
     }

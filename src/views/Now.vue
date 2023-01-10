@@ -15,7 +15,7 @@
   </div>
 
   <div class="now-more">
-    <router-link to="to">我之前在做/想些什么？</router-link>
+    <router-link :to="{name: 'now_history'}">我之前在做/想些什么？</router-link>
   </div>
 </template>
 
