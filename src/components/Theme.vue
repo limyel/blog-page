@@ -25,17 +25,17 @@ export default {
 
 @media (min-width: 0px) and (max-width: 1600px) {
   .theme {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .theme {
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 
@@ -44,6 +44,9 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 5%;
+  box-shadow: 0 2px 6px rgb(100 100 100 / 30%);
 
   .main {
     flex-grow: 1;

@@ -40,6 +40,11 @@ body * {
 .app {
   width: 100vw;
   min-height: 100vh;
+  padding: 50px 0;
+}
+
+body {
+  background-color: #e6e6e6;
 }
 
 /* markdown 样式 */
