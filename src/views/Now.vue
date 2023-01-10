@@ -34,7 +34,7 @@
 }
 
 .now-content {
-  border: #316cf4 solid 1px;
+  border: #787878 solid 1px;
   padding: 50px;
   margin-bottom: 20px;
 
