@@ -46,4 +46,7 @@
 .now-more a {
   color: #787878;
 }
+.now-more a:hover {
+  border-bottom: #787878 solid 1px;
+}
 </style>
