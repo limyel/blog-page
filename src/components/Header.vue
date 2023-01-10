@@ -9,6 +9,7 @@
       <router-link :to="{name: 'search'}" class="navication-item">搜索</router-link>
       <router-link :to="{name: 'search'}" class="navication-item">留言板</router-link>
       <router-link :to="{name: 'about'}" class="navication-item">关于</router-link>
+      <router-link :to="{name: 'now'}" class="navication-item">NOW</router-link>
     </div>
   </div>
 </template>
