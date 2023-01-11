@@ -25,17 +25,17 @@ export default {
 
 @media (min-width: 0px) and (max-width: 1600px) {
   .theme {
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .theme {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 36%;
+    margin-left: 32%;
+    margin-right: 32%;
   }
 }
 
