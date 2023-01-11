@@ -29,6 +29,7 @@
   padding: 20px 0;
   justify-content: space-between;
   margin-bottom: 50px;
+  border-bottom: 3px solid #e6e6e6;
 
   .logo {
     font-weight: 700;
@@ -42,8 +43,7 @@
     justify-content: right;
 
     .navication-item {
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       margin-left: 30px;
     }
 

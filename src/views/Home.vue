@@ -55,7 +55,7 @@ const update = data => {
     margin-bottom: 20px;
 
     .title {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 20px;
     }
@@ -76,8 +76,15 @@ const update = data => {
         flex-direction: row;
 
         .tag {
-          font-size: 0.8rem;
+          font-size: 0.7rem;
           font-weight: 700;
+
+          a {
+            color: #787878;
+          }
+          a:hover {
+            border-bottom: 1px solid #787878;
+          }
         }
       }
     }
