@@ -33,6 +33,24 @@
   font-style: normal;
 }
 
+@media (min-width: 0px) and (max-width: 960px) {
+  .app {
+    padding: 0;
+  }
+  body {
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .app {
+    padding: 50px 0;
+  }
+  body {
+    background-color: #e6e6e6;
+  }
+}
+
 body * {
   font-family: "oppos-sons", monospace;
 }
@@ -40,11 +58,6 @@ body * {
 .app {
   width: 100vw;
   min-height: 100vh;
-  padding: 50px 0;
-}
-
-body {
-  background-color: #e6e6e6;
 }
 
 /* markdown 样式 */

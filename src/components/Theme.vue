@@ -23,19 +23,16 @@ export default {
 
 <style lang="scss">
 
-@media (min-width: 0px) and (max-width: 1600px) {
+@media (min-width: 0px) and (max-width: 960px) {
   .theme {
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
+    width: 100%;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 960px) {
   .theme {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 860px;
+    margin: auto;
   }
 }
 
